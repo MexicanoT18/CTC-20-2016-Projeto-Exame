@@ -1,0 +1,48 @@
+# depslib dependency file v1.0
+1465669615 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\main.cpp
+	<stdio.h>
+	"Graph.h"
+	"BipartideGraph.h"
+	"FordFulkersonMaxFlow.h"
+	"EdmondsKarpMaxFLow.h"
+	"HungarianMCBM.h"
+	"HopcroftKarpMCBM.h"
+
+1465666639 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\hopcroftkarpmcbm.cpp
+	"HopcroftKarpMCBM.h"
+
+1465670213 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\hopcroftkarpmcbm.h
+	"BipartideGraph.h"
+
+1465670401 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\bipartidegraph.h
+	"Graph.h"
+
+1465670401 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\graph.h
+	<vector>
+
+1465667709 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\hungarianmcbm.cpp
+	"HungarianMCBM.h"
+
+1465670213 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\hungarianmcbm.h
+	"BipartideGraph.h"
+
+1465669259 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\edmondskarpmaxflow.cpp
+	"EdmondsKarpMaxFLow.h"
+
+1465670213 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\edmondskarpmaxflow.h
+	"Graph.h"
+
+1465669259 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\fordfulkersonmaxflow.cpp
+	"FordFulkersonMaxFlow.h"
+
+1465670213 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\fordfulkersonmaxflow.h
+	"Graph.h"
+
+1465669794 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\graph.cpp
+	"Graph.h"
+	<stdio.h>
+
+1465669955 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\bipartidegraph.cpp
+	"BipartideGraph.h"
+	<stdio.h>
+
