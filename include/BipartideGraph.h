@@ -21,6 +21,8 @@ class BipartideGraph
         //Getters.
         vector< vector< int > > & getFirstLayer() { return firstLayer; }
         vector< vector< int > > & getSecondLayer() { return secondLayer; }
+        int getFirstLayerSize() { return firstLayerSize; }
+        int getSecondLayerSize() { return secondLayerSize; }
         //Printa o grafo.
         void printGraph();
     protected:

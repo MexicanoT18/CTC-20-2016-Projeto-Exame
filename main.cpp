@@ -23,14 +23,16 @@ int main()
     printf("Fluxo Edmonds Karp: %d\n", ekmf.computeMaxFlow(G));
 
     BipartideGraph BG;
-    BG.readFile("bipartide_graph.txt");
+    BG.readFile("bipartide_graph_3.txt");
     BG.printGraph();
     Graph convertedGraph = BG.convertToFlowGraph();
 
     printf("Emparelhamento máximo Ford Fulkerson: %d\n", ffmf.computeMaxFlow(convertedGraph));
     printf("Emparelhamento máximo Edmonds Karp: %d\n", ekmf.computeMaxFlow(convertedGraph));
     printf("Emparelhamento máximo Hungarian: %d\n", hmcbm.computeMCBM(BG));
+    hmcbm.printMatching();
     printf("Emparelhamento máximo Hopcroft Karp: %d\n", hkmcbm.computeMCBM(BG));
+    hkmcbm.printMatching();
 
     return 0;
 }
