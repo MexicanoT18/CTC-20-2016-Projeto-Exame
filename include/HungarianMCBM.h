@@ -8,7 +8,7 @@ class HungarianMCBM
     public:
         HungarianMCBM();
         //Recebe um grafo bipartido e retorna o emparelhamento máximo.
-        int computeMCBM(BipartideGraph & graph);
+        int computeMCBM(BipartideGraph graph);
         //Printa o emparelhamento.
         void printMatching();
         virtual ~HungarianMCBM();

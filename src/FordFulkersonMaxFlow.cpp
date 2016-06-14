@@ -5,7 +5,7 @@ FordFulkersonMaxFlow::FordFulkersonMaxFlow()
     //ctor
 }
 
-int FordFulkersonMaxFlow::computeMaxFlow(Graph & graph)
+int FordFulkersonMaxFlow::computeMaxFlow(Graph graph)
 {
     return 0;
 }

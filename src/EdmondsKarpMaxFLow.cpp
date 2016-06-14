@@ -5,7 +5,7 @@ EdmondsKarpMaxFLow::EdmondsKarpMaxFLow()
 	//ctor
 }
 
-int EdmondsKarpMaxFLow::computeMaxFlow(Graph & graph)
+int EdmondsKarpMaxFLow::computeMaxFlow(Graph graph)
 {
 	//Vetores com as arestas e o valor do fluxo residual de cada aresta
 	vector< vector< int > > adjList = graph.getAdjList();

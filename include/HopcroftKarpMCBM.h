@@ -8,7 +8,7 @@ class HopcroftKarpMCBM
     public:
         HopcroftKarpMCBM();
         //Recebe um grafo e retorna o fluxo máximo.
-        int computeMCBM(BipartideGraph & graph);
+        int computeMCBM(BipartideGraph graph);
         //Printa o emparelhamento.
         void printMatching();
         virtual ~HopcroftKarpMCBM();
