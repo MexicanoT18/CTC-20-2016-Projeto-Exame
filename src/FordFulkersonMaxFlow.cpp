@@ -1,5 +1,4 @@
 #include "FordFulkersonMaxFlow.h"
-#include <iostream>
 
 FordFulkersonMaxFlow::FordFulkersonMaxFlow()
 {
@@ -8,6 +7,7 @@ FordFulkersonMaxFlow::FordFulkersonMaxFlow()
 
 int FordFulkersonMaxFlow::computeMaxFlow(Graph graph)
 {
+    time = clock();
     int maxFlow = 0, u, v;
     numNodes = graph.getNumNodes();
     source = graph.getSource();
@@ -64,6 +64,7 @@ int FordFulkersonMaxFlow::computeMaxFlow(Graph graph)
         else break;
     }
 
+	time = clock() - time;
     return maxFlow;
 }
 

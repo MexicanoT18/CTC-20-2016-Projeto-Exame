@@ -32,7 +32,7 @@ void Graph::buildRandomGraph(int nodes, int edges)
     vector<pair<int, int> > pairs;
     for(int i = 0; i < numNodes; i++){
         for(int j = 0; j < numNodes; j++){
-            pairs.push_back(make_pair(i, j));
+            if (i != j) pairs.push_back(make_pair(i, j));
         }
     }
     random_shuffle(pairs.begin(), pairs.end());
@@ -48,8 +48,10 @@ void Graph::buildRandomGraph(int nodes, int edges)
         addEdge(u, v, (rand()%20) + 1);
     }
 
-    source = rand()%numNodes;
-    destination = rand()%numNodes;
+    do{
+        source = rand()%numNodes;
+        destination = rand()%numNodes;
+    } while(source == destination);
 }
 
 bool Graph::readFile(const char* path)

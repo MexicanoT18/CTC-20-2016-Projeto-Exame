@@ -7,6 +7,7 @@ EdmondsKarpMaxFlow::EdmondsKarpMaxFlow()
 
 int EdmondsKarpMaxFlow::computeMaxFlow(Graph graph)
 {
+    time = clock();
 	//Vetores com as arestas e o valor do fluxo residual de cada aresta
 	vector< vector< int > > & adjList = graph.getAdjList();
 	residual = graph.getAdjMatrix();
@@ -63,6 +64,7 @@ int EdmondsKarpMaxFlow::computeMaxFlow(Graph graph)
 		flow += currentflow;
 	}
 
+	time = clock() - time;
 	return flow;
 }
 

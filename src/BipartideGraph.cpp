@@ -1,6 +1,8 @@
 #include "BipartideGraph.h"
-
+#include <time.h>
+#include <algorithm>
 #include <stdio.h>
+using namespace std;
 
 BipartideGraph::BipartideGraph()
 {
@@ -11,7 +13,7 @@ BipartideGraph::BipartideGraph()
 
 void BipartideGraph::printGraph()
 {
-    printf("Biartide Graph Layer 1:\n");
+    printf("Bipartide Graph Layer 1:\n");
     for(int i=0; i<firstLayerSize; i++){
         printf("\tNode %d:", i);
         for(int j=0; j<(int)firstLayer[i].size(); j++){
@@ -19,7 +21,7 @@ void BipartideGraph::printGraph()
         }
         printf("\n");
     }
-    printf("Biartide Graph Layer 2:\n");
+    printf("Bipartide Graph Layer 2:\n");
     for(int i=0; i<secondLayerSize; i++){
         printf("\tNode %d:", i);
         for(int j=0; j<(int)secondLayer[i].size(); j++){
@@ -29,9 +31,61 @@ void BipartideGraph::printGraph()
     }
 }
 
+void BipartideGraph::buildRandomGraph(int firstSize, int secondSize, int edges)
+{
+    allocateGraph(firstSize, secondSize);
+
+    vector<pair<int, int> > pairs;
+    for(int i = 0; i < firstSize; i++){
+        for(int j = 0; j < secondSize; j++){
+            pairs.push_back(make_pair(i, j));
+        }
+    }
+    random_shuffle(pairs.begin(), pairs.end());
+
+    int pairToChoose;
+    int u, v;
+    for(int i = 0; !pairs.empty() && i < edges; i++){
+        pairToChoose = rand()%((int)pairs.size());
+        u = pairs[pairToChoose].first;
+        v = pairs[pairToChoose].second;
+        pairs[pairToChoose] = pairs[(int)pairs.size()-1];
+        pairs.pop_back();
+        addEdge(u, v);
+    }
+}
+
 Graph BipartideGraph::convertToFlowGraph()
 {
-    return Graph();
+    Graph graph;
+
+    graph.allocateGraph(firstLayerSize+secondLayerSize+2);
+
+    //Setar Source e Destination
+    int s = firstLayerSize+secondLayerSize;
+    int t = s+1;
+    graph.setSource(s);
+    graph.setDestination(t);
+
+    //Cria arestas de S para a primeira camada
+    for (int i=0; i<firstLayerSize; i++){
+        graph.addEdge(s, i, 1);
+    }
+
+    //Cria arestas da primeira para a segunda camada
+    vector< vector< int > > & adjlist = getFirstLayer();
+    for (int i = 0; i < firstLayerSize; i++){
+        for (int j = 0; j < (int)adjlist[i].size(); j++){
+            graph.addEdge(i,adjlist[i][j]+firstLayerSize,1);
+        }
+    }
+
+    //Cria arestas da segunda camada para T
+    for (int i=0; i<secondLayerSize; i++){
+        graph.addEdge(firstLayerSize+i, t, 1);
+    }
+
+    return graph;
 }
 
 bool BipartideGraph::readFile(const char* path)

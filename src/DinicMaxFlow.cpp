@@ -65,6 +65,7 @@ bool DinicMaxFlow::BFS()
 
 int DinicMaxFlow::computeMaxFlow(Graph graph)
 {
+    time = clock();
     int result = 0, flow;
 
     numNodes = graph.getNumNodes();
@@ -85,6 +86,7 @@ int DinicMaxFlow::computeMaxFlow(Graph graph)
             result += flow;
 		} while (flow > 0);
 	}
+	time = clock() - time;
 	return result;
 }
 

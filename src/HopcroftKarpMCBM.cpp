@@ -10,6 +10,7 @@ HopcroftKarpMCBM::HopcroftKarpMCBM()
 
 int HopcroftKarpMCBM::computeMCBM(BipartideGraph graph)
 {
+    time = clock();
     vector< vector< int > > & firstLayer = graph.getFirstLayer();
     firstLayerSize = graph.getFirstLayerSize();
     secondLayerSize = graph.getSecondLayerSize();
@@ -43,6 +44,7 @@ int HopcroftKarpMCBM::computeMCBM(BipartideGraph graph)
             secondLayerPair[v] = -1;
     }
 
+	time = clock() - time;
     return result;
 }
 

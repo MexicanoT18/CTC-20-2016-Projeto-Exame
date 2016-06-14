@@ -3,6 +3,7 @@
 
 #include "Graph.h"
 #include <queue>
+#include <time.h>
 using namespace std;
 
 class DinicMaxFlow
@@ -11,6 +12,7 @@ class DinicMaxFlow
         DinicMaxFlow();
         //Recebe um grafo de fluxo e retorna seu fluxo máximo.
         int computeMaxFlow(Graph graph);
+    double getTime() { return ((double)time)/(double)CLOCKS_PER_SEC; }
         virtual ~DinicMaxFlow();
     protected:
     private:
@@ -25,6 +27,7 @@ class DinicMaxFlow
         int source;
         int destination;
         int numNodes;
+        clock_t time;
 };
 
 #endif // DINICMAXFLOW_H

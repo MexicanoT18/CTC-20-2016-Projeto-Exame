@@ -2,6 +2,7 @@
 #define HUNGARIANMCBM_H
 
 #include "BipartideGraph.h"
+#include <time.h>
 
 class HungarianMCBM
 {
@@ -11,6 +12,7 @@ class HungarianMCBM
         int computeMCBM(BipartideGraph graph);
         //Printa o emparelhamento.
         void printMatching();
+    double getTime() { return ((double)time)/(double)CLOCKS_PER_SEC; }
         virtual ~HungarianMCBM();
     protected:
     private:
@@ -20,6 +22,7 @@ class HungarianMCBM
         vector<int> secondLayerPair;
         int firstLayerSize;
         int secondLayerSize;
+        clock_t time;
 };
 
 #endif // HUNGARIANMCBM_H

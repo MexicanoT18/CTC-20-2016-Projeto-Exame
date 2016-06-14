@@ -2,6 +2,7 @@
 #define HOPCROFTKARPMCBM_H
 
 #include "BipartideGraph.h"
+#include <time.h>
 
 class HopcroftKarpMCBM
 {
@@ -11,6 +12,7 @@ class HopcroftKarpMCBM
         int computeMCBM(BipartideGraph graph);
         //Printa o emparelhamento.
         void printMatching();
+    double getTime() { return ((double)time)/(double)CLOCKS_PER_SEC; }
         virtual ~HopcroftKarpMCBM();
     protected:
     private:
@@ -22,6 +24,7 @@ class HopcroftKarpMCBM
         int firstLayerSize;
         int secondLayerSize;
         int INF;
+        clock_t time;
 };
 
 #endif // HOPCROFTKARPMCBM_H

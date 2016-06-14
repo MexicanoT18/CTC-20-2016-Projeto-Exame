@@ -9,6 +9,7 @@ HungarianMCBM::HungarianMCBM()
 
 int HungarianMCBM::computeMCBM(BipartideGraph graph)
 {
+    time = clock();
     int result = 0;
     firstLayerSize = graph.getFirstLayerSize();
     secondLayerSize = graph.getSecondLayerSize();
@@ -23,6 +24,7 @@ int HungarianMCBM::computeMCBM(BipartideGraph graph)
         result += augment(u, graph);
     }
 
+	time = clock() - time;
     return result;
 }
 

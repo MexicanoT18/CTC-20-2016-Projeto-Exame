@@ -12,6 +12,8 @@ class BipartideGraph
         Graph convertToFlowGraph();
         //Lê o grafo a partir de um arquivo.
         bool readFile(const char* path);
+        //Constrói um grafo aleatório.
+        void buildRandomGraph(int firstSize, int secondSize, int edges);
         //Limpa o grafo.
         void clearGraph();
         //Adiciona uma aresta.
