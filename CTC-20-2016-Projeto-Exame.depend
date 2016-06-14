@@ -121,3 +121,66 @@
 	"HungarianMCBM.h"
 	<stdio.h>
 
+1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\main.cpp
+	<stdio.h>
+	"Graph.h"
+	"BipartideGraph.h"
+	"FordFulkersonMaxFlow.h"
+	"EdmondsKarpMaxFLow.h"
+	"HungarianMCBM.h"
+	"HopcroftKarpMCBM.h"
+	"DinicMaxFlow.h"
+
+1465876277 c:\users\caio cesar\documents\netbeansprojects\forsterex\include\graph.h
+	<vector>
+
+1465876277 c:\users\caio cesar\documents\netbeansprojects\forsterex\include\bipartidegraph.h
+	"Graph.h"
+
+1465879905 c:\users\caio cesar\documents\netbeansprojects\forsterex\include\fordfulkersonmaxflow.h
+	"Graph.h"
+	<queue>
+
+1465876277 c:\users\caio cesar\documents\netbeansprojects\forsterex\include\edmondskarpmaxflow.h
+	"Graph.h"
+	<queue>
+
+1465876277 c:\users\caio cesar\documents\netbeansprojects\forsterex\include\hungarianmcbm.h
+	"BipartideGraph.h"
+
+1465876277 c:\users\caio cesar\documents\netbeansprojects\forsterex\include\hopcroftkarpmcbm.h
+	"BipartideGraph.h"
+
+1465876277 c:\users\caio cesar\documents\netbeansprojects\forsterex\include\dinicmaxflow.h
+	"Graph.h"
+
+1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\bipartidegraph.cpp
+	"BipartideGraph.h"
+	<stdio.h>
+
+1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\dinicmaxflow.cpp
+	"DinicMaxFlow.h"
+	<queue>
+	<stdio.h>
+	<algorithm>
+
+1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\edmondskarpmaxflow.cpp
+	"EdmondsKarpMaxFlow.h"
+
+1465880960 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\fordfulkersonmaxflow.cpp
+	"FordFulkersonMaxFlow.h"
+	<iostream>
+
+1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\graph.cpp
+	"Graph.h"
+	<stdio.h>
+
+1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\hopcroftkarpmcbm.cpp
+	"HopcroftKarpMCBM.h"
+	<queue>
+	<stdio.h>
+
+1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\hungarianmcbm.cpp
+	"HungarianMCBM.h"
+	<stdio.h>
+

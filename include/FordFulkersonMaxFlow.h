@@ -2,6 +2,7 @@
 #define FORDFULKERSONMAXFLOW_H
 
 #include "Graph.h"
+#include <queue>
 
 class FordFulkersonMaxFlow
 {
