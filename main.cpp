@@ -32,6 +32,7 @@ int main()
 
     printf("Emparelhamento máximo Ford Fulkerson: %d\n", ffmf.computeMaxFlow(convertedGraph));
     printf("Emparelhamento máximo Edmonds Karp: %d\n", ekmf.computeMaxFlow(convertedGraph));
+    printf("Emparelhamento máximo Dinic: %d\n", dmf.computeMaxFlow(convertedGraph));
     printf("Emparelhamento máximo Hungarian: %d\n", hmcbm.computeMCBM(BG));
     hmcbm.printMatching();
     printf("Emparelhamento máximo Hopcroft Karp: %d\n", hkmcbm.computeMCBM(BG));

@@ -2,6 +2,8 @@
 #define DINICMAXFLOW_H
 
 #include "Graph.h"
+#include <queue>
+using namespace std;
 
 class DinicMaxFlow
 {
@@ -12,9 +14,17 @@ class DinicMaxFlow
         virtual ~DinicMaxFlow();
     protected:
     private:
-        int augment(int v, int minEdge, vector< vector<int> > & adjMatrix, int s);
-        vector<int> p;
+        int DFS(int u, int inFlow);
+        bool BFS();
+        vector< vector<int> > residual;
+        vector< vector<int> > adjList;
+        vector<int> dist;
+        vector<int> work;
+        queue<int> bfsQueue;
         int INF;
+        int source;
+        int destination;
+        int numNodes;
 };
 
 #endif // DINICMAXFLOW_H

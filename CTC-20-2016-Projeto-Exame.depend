@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1465866195 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\main.cpp
+1465873805 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\main.cpp
 	<stdio.h>
 	"Graph.h"
 	"BipartideGraph.h"
@@ -23,17 +23,17 @@
 1465865421 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\graph.h
 	<vector>
 
-1465870374 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\hungarianmcbm.cpp
+1465872256 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\hungarianmcbm.cpp
 	"HungarianMCBM.h"
 	<stdio.h>
 
-1465870374 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\hungarianmcbm.h
+1465872251 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\hungarianmcbm.h
 	"BipartideGraph.h"
 
-1465866735 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\edmondskarpmaxflow.cpp
+1465873733 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\edmondskarpmaxflow.cpp
 	"EdmondsKarpMaxFlow.h"
 
-1465866726 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\edmondskarpmaxflow.h
+1465873725 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\edmondskarpmaxflow.h
 	"Graph.h"
 	<queue>
 
@@ -47,14 +47,15 @@
 	"Graph.h"
 	<stdio.h>
 
-1465669955 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\bipartidegraph.cpp
+1465873767 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\bipartidegraph.cpp
 	"BipartideGraph.h"
 	<stdio.h>
 
-1465865421 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\dinicmaxflow.h
+1465879981 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\dinicmaxflow.h
 	"Graph.h"
+	<queue>
 
-1465865421 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\dinicmaxflow.cpp
+1465879981 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\dinicmaxflow.cpp
 	"DinicMaxFlow.h"
 	<queue>
 	<stdio.h>

@@ -9,45 +9,82 @@ DinicMaxFlow::DinicMaxFlow()
     INF = (1<<30);
 }
 
-int DinicMaxFlow::augment(int v, int minEdge, vector< vector<int> > & adjMatrix, int s) {
-	if (v == s) { return minEdge; }
-	else if (p[v] != -1) {
-		int f = augment(p[v], min(minEdge, adjMatrix[p[v]][v]), adjMatrix, s);
-		adjMatrix[p[v]][v] -= f;
-		adjMatrix[v][p[v]] += f;
-		return f;
+int DinicMaxFlow::DFS(int u, int inFlow) {
+
+    //Encontrou o final.
+	if (u == destination)
+        return inFlow;
+
+    //Variáveis auxiliares.
+	int v, outFlow;
+
+	//Percorre os adjacentes evitando percursos por onde já se sabe que não tem fluxo.
+	for (int &i = work[u]; i<(int)adjList[u].size(); i++) {
+		v = adjList[u][i];
+
+		//Verifica pode haver fluxo seguindo.
+		if (residual[u][v] <= 0) continue;
+
+		if (dist[v] == dist[u] + 1) {
+
+            //Procura fluxo de u pra v.
+			outFlow = DFS(v, min(inFlow, residual[u][v]));
+
+			//Se achou fluxo, atualiza a aresta e segue.
+			if (outFlow > 0) {
+				residual[u][v] -= outFlow;
+				residual[v][u] += outFlow;
+				return outFlow;
+			}
+		}
 	}
 	return 0;
 }
 
+bool DinicMaxFlow::BFS()
+{
+    //Inicializa o vetor de distâncias
+    dist.assign(numNodes, -1);
+    dist[source] = 0;
+    bfsQueue.push(source);
+    int u, v;
+    while(!bfsQueue.empty()){
+        u = bfsQueue.front();
+        bfsQueue.pop();
+        for (int i = 0; i<(int)adjList[u].size(); i++){
+            v = adjList[u][i];
+            if (dist[v] < 0 && residual[u][v] > 0){
+                dist[v] = dist[u] + 1;
+                bfsQueue.push(v);
+            }
+        }
+    }
+    return dist[destination] >= 0;
+}
+
 int DinicMaxFlow::computeMaxFlow(Graph graph)
 {
-    vector< vector<int> > & adjMatrix = graph.getAdjMatrix();
-    vector< vector<int> > & adjList = graph.getAdjList();
-	int u, maxFlow = 0, v, f, s = graph.getSource(), t = graph.getDestination();
-	int n=10;
-	while (n--) {
-		vector<int> dist(graph.getNumNodes(), INF);
-		dist[s] = 0;
-		queue<int> q; q.push(s);
-		p.assign(graph.getNumNodes(), -1);
-		while (!q.empty()) {
-			u = q.front(); q.pop();
-			if (u == t) break;
-			for(int i = 0; i<(int)adjList[u].size(); i++){
-				v = adjList[u][i];
-				if (adjMatrix[u][v] > 0 && dist[v] == INF){
-					dist[v] = dist[u] + 1;
-					q.push(v);
-					p[v] = u;
-				}
-			}
-		}
-		f = augment(t, INF, adjMatrix, s);
-		if (f == 0) break;
-		maxFlow += f;
+    int result = 0, flow;
+
+    numNodes = graph.getNumNodes();
+    residual = graph.getAdjMatrix();
+    adjList = graph.getAdjList();
+    work.resize(numNodes);
+    dist.resize(numNodes);
+    source = graph.getSource();
+    destination = graph.getDestination();
+	if (source < 0 || destination < 0) {
+		return -1;
 	}
-	return maxFlow;
+
+	while (BFS()) {
+		work.assign(numNodes, 0);
+		do{
+            flow = DFS(source, INF);
+            result += flow;
+		} while (flow > 0);
+	}
+	return result;
 }
 
 DinicMaxFlow::~DinicMaxFlow()

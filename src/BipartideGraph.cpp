@@ -45,7 +45,6 @@ bool BipartideGraph::readFile(const char* path)
     int edges, from, to;
     fscanf(in, "%d %d %d", &firstLayerSize, &secondLayerSize, &edges);
     allocateGraph(firstLayerSize, secondLayerSize);
-    printf("fls: %d sls: %d\n", firstLayerSize, secondLayerSize);
 
     while(numEdges < edges){
         fscanf(in, "%d %d", &from, &to);

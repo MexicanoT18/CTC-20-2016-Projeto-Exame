@@ -11,9 +11,15 @@ public:
 protected:
 private:
     int INF;
+    int source;
+    int destination;
+    vector<vector<int> > residual;
+
+	//Vetor auxiliar que guarda o antecessor de um vértice ao buscar um "augmenting path"
+    vector<int> parent;
 	//Busca um "augmenting path" da fonte até o destino usando BFS
-	void BFS(int source, int dest, vector< vector<int> > & adjList, vector<vector<int> > & residual, vector<int> & parent);
+	void BFS(vector< vector<int> > & adjList);
 
 	//Percorre o "augmenting path" computando o valor do fluxo
-	int augment(int source, int v, int minedge, vector< vector<int> > & residual, vector<int> & parent);
+	int augment(int v, int minedge);
 };

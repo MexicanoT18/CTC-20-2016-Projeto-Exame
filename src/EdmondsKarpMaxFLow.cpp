@@ -9,15 +9,12 @@ int EdmondsKarpMaxFlow::computeMaxFlow(Graph graph)
 {
 	//Vetores com as arestas e o valor do fluxo residual de cada aresta
 	vector< vector< int > > & adjList = graph.getAdjList();
-	vector< vector< int > > & residual = graph.getAdjMatrix();
-
-	//Vetor auxiliar que guarda o antecessor de um vértice ao buscar um "augmenting path"
-	vector<int> parent;
+	residual = graph.getAdjMatrix();
 
 	//Modifica o vetor com as arestas de modo a incluir as arestas reversas
 	int numnodes = adjList.size();
 	for (int i = 0; i < numnodes; i++) {
-		for (int j = 0; j < adjList[i].size(); j++) {
+		for (int j = 0; j < (int)adjList[i].size(); j++) {
 			int u = adjList[i][j];
 			if (residual[u][i] == 0) {
 				adjList[u].push_back(i);
@@ -30,8 +27,8 @@ int EdmondsKarpMaxFlow::computeMaxFlow(Graph graph)
 	parent.resize(numnodes);
 
 	//Seta os vértices que correspondem ao destino e a fonte
-	int source = graph.getSource();
-	int destination = graph.getDestination();
+	source = graph.getSource();
+	destination = graph.getDestination();
 	if (source < 0 || destination < 0) {
 		return -1;
 	}
@@ -52,10 +49,10 @@ int EdmondsKarpMaxFlow::computeMaxFlow(Graph graph)
 		parent[source] = -2;
 
 		//Busca um "augmenting path"
-		BFS(source, destination, adjList, residual, parent);
+		BFS(adjList);
 
 		//Retorna o fluxo do caminho encontrado ou 0 caso não encontre nenhum
-		currentflow = augment(source, destination, INF, residual,parent);
+		currentflow = augment(destination, INF);
 
 		//Todos os caminhos foram encontrados então termina o LOOP
 		if (currentflow == 0) {
@@ -69,13 +66,7 @@ int EdmondsKarpMaxFlow::computeMaxFlow(Graph graph)
 	return flow;
 }
 
-EdmondsKarpMaxFlow::~EdmondsKarpMaxFlow()
-{
-	//dtor
-}
-
-void EdmondsKarpMaxFlow::BFS(int source,int dest, vector< vector< int > > & adjList,
-	vector< vector< int > > & residual, vector<int> & parent)
+void EdmondsKarpMaxFlow::BFS(vector< vector< int > > & adjList)
 {
 	int v,u;
 	queue<int> vertices;
@@ -86,18 +77,18 @@ void EdmondsKarpMaxFlow::BFS(int source,int dest, vector< vector< int > > & adjL
 	vertices.push(source);
 	found = false;
 
-	while (!vertices.empty()&&!found) {
+	while (!vertices.empty() && !found) {
 		v = vertices.front();
 		vertices.pop();
 
 		//Para o vértice atual verifica todos os seus vizinhos que ainda não foram percorridos
-		for (int i = 0; i < adjList[v].size(); i++) {
+		for (int i = 0; i < (int)adjList[v].size(); i++) {
 			u = adjList[v][i];
 			if (residual[v][u]>0 && parent[u]==-1) {
 				parent[u] = v;
 
 				//Loop termina caso o destino seja encontrado
-				if (u == dest){
+				if (u == destination){
 					found = true;
 					break;
 				}
@@ -107,16 +98,21 @@ void EdmondsKarpMaxFlow::BFS(int source,int dest, vector< vector< int > > & adjL
 	}
 }
 
-int EdmondsKarpMaxFlow::augment(int source,int v, int minedge, vector< vector< int > > & residual,vector<int> & parent)
+int EdmondsKarpMaxFlow::augment(int v, int minedge)
 {
 	if (v == source) {
 		return minedge;
 	}
 	if (parent[v] != -1) {
-		int value = augment(source, parent[v], min(minedge, residual[parent[v]][v]),residual,parent);
+		int value = augment(parent[v], min(minedge, residual[parent[v]][v]));
 		residual[parent[v]][v] -= value;
 		residual[v][parent[v]] += value;
 		return value;
 	}
 	return 0;
+}
+
+EdmondsKarpMaxFlow::~EdmondsKarpMaxFlow()
+{
+	//dtor
 }

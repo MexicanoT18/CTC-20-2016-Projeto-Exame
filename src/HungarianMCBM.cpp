@@ -9,31 +9,40 @@ HungarianMCBM::HungarianMCBM()
 
 int HungarianMCBM::computeMCBM(BipartideGraph graph)
 {
-    int MCBM = 0;
-    int n = graph.getFirstLayerSize();
+    int result = 0;
+    firstLayerSize = graph.getFirstLayerSize();
+    secondLayerSize = graph.getSecondLayerSize();
 
-    adjList = graph.getFirstLayer();
-    match.assign(graph.getFirstLayerSize()+graph.getSecondLayerSize(), -1);
-    for(int l = 0; l < n; l++){
-        vis.assign(n ,0);
-        MCBM += Aug(l);
+    firstLayerPair.resize(firstLayerSize);
+    firstLayerPair.assign(firstLayerSize, -1);
+    secondLayerPair.resize(secondLayerSize);
+    secondLayerPair.assign(secondLayerSize, -1);
+
+    for(int u = 0; u < firstLayerSize; u++){
+        visited.assign(firstLayerSize, false);
+        result += augment(u, graph);
     }
 
-    return MCBM;
+    return result;
 }
 
-int HungarianMCBM::Aug(int l){
-    if (vis[l])
-        return 0;
-    vis[l] = 1;
-    for(int j = 0; j < (int)adjList[l].size(); j++){
-        int r = adjList[l][j];
-        if(match[r] == -1 || Aug(match[r])){
-            match[r] = 1;
-            return 1;
+bool HungarianMCBM::augment(int u, BipartideGraph & graph){
+    if (visited[u])
+        return false;
+    visited[u] = true;
+
+    int v;
+    vector< vector< int > > & adjList = graph.getFirstLayer();
+
+    for(int i = 0; i < (int)adjList[u].size(); i++){
+        v = adjList[u][i];
+        if(secondLayerPair[v] == -1 || augment(secondLayerPair[v], graph)){
+            secondLayerPair[v] = u;
+            firstLayerPair[u] = v;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 void HungarianMCBM::printMatching()
 {

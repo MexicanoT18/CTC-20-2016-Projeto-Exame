@@ -14,12 +14,12 @@ class HungarianMCBM
         virtual ~HungarianMCBM();
     protected:
     private:
-        int Aug(int l);
-        vector<int> match;
-        vector<int> vis;
-        vector< vector< int > > adjList;
+        bool augment(int u, BipartideGraph & graph);
+        vector<bool> visited;
         vector<int> firstLayerPair;
         vector<int> secondLayerPair;
+        int firstLayerSize;
+        int secondLayerSize;
 };
 
 #endif // HUNGARIANMCBM_H
