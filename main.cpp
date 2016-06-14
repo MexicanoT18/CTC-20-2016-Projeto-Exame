@@ -12,8 +12,6 @@ using namespace std;
 int main()
 {
     Graph G;
-    G.readFile("graph.txt");
-    G.printGraph();
 
     FordFulkersonMaxFlow ffmf;
     EdmondsKarpMaxFlow ekmf;
@@ -21,9 +19,14 @@ int main()
     HungarianMCBM hmcbm;
     HopcroftKarpMCBM hkmcbm;
 
-    printf("Fluxo Ford Fulkerson: %d\n", ffmf.computeMaxFlow(G));
-    printf("Fluxo Edmonds Karp: %d\n", ekmf.computeMaxFlow(G));
-    printf("Fluxo Dinic: %d\n", dmf.computeMaxFlow(G));
+    while(getchar() != 'c'){
+        G.buildRandomGraph(10, 25);
+        G.printGraph();
+
+        printf("Fluxo Ford Fulkerson: %d\n", ffmf.computeMaxFlow(G));
+        printf("Fluxo Edmonds Karp: %d\n", ekmf.computeMaxFlow(G));
+        printf("Fluxo Dinic: %d\n", dmf.computeMaxFlow(G));
+    }
 
     BipartideGraph BG;
     BG.readFile("bipartide_graph_3.txt");

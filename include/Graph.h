@@ -11,6 +11,8 @@ class Graph
         virtual ~Graph();
         //Lê o grafo a partir de um arquivo.
         bool readFile(const char* path);
+        //Gera um grafo aleatório.
+        void buildRandomGraph(int nodes, int edges);
         //Limpa o grafo.
         void clearGraph();
         //Adiciona uma aresta com uma determinada capacidade.

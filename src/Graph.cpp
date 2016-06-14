@@ -1,5 +1,8 @@
 #include "Graph.h"
 #include <stdio.h>
+#include <iostream>
+#include <algorithm>
+using namespace std;
 
 Graph::Graph()
 {
@@ -20,6 +23,33 @@ void Graph::printGraph()
         printf("\n");
     }
     printf("\tSource: %d Destination: %d\n", source, destination);
+}
+
+void Graph::buildRandomGraph(int nodes, int edges)
+{
+    allocateGraph(nodes);
+
+    vector<pair<int, int> > pairs;
+    for(int i = 0; i < numNodes; i++){
+        for(int j = 0; j < numNodes; j++){
+            pairs.push_back(make_pair(i, j));
+        }
+    }
+    random_shuffle(pairs.begin(), pairs.end());
+
+    int pairToChoose;
+    int u, v;
+    for(int i = 0; !pairs.empty() && i < edges; i++){
+        pairToChoose = rand()%((int)pairs.size());
+        u = pairs[pairToChoose].first;
+        v = pairs[pairToChoose].second;
+        pairs[pairToChoose] = pairs[(int)pairs.size()-1];
+        pairs.pop_back();
+        addEdge(u, v, (rand()%20) + 1);
+    }
+
+    source = rand()%numNodes;
+    destination = rand()%numNodes;
 }
 
 bool Graph::readFile(const char* path)
@@ -61,8 +91,9 @@ bool Graph::addEdge(int from, int to, int capacity)
     if (from < 0 || from >= numNodes || to < 0 || to >= numNodes || capacity <= 0)
         return false;
 
-    if (adjMatrix[from][to] == 0){
+    if (adjMatrix[from][to] == 0 && adjMatrix[to][from] == 0){
         adjList[from].push_back(to);
+        adjList[to].push_back(from);
     }
 
     adjMatrix[from][to] += capacity;
