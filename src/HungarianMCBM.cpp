@@ -1,6 +1,7 @@
 #include "HungarianMCBM.h"
 #include <stdio.h>
 
+
 HungarianMCBM::HungarianMCBM()
 {
     //ctor
@@ -8,9 +9,32 @@ HungarianMCBM::HungarianMCBM()
 
 int HungarianMCBM::computeMCBM(BipartideGraph graph)
 {
-    return 0;
+    int MCBM = 0;
+    int n = graph.getFirstLayerSize();
+
+    adjList = graph.getFirstLayer();
+    match.assign(graph.getFirstLayerSize()+graph.getSecondLayerSize(), -1);
+    for(int l = 0; l < n; l++){
+        vis.assign(n ,0);
+        MCBM += Aug(l);
+    }
+
+    return MCBM;
 }
 
+int HungarianMCBM::Aug(int l){
+    if (vis[l])
+        return 0;
+    vis[l] = 1;
+    for(int j = 0; j < (int)adjList[l].size(); j++){
+        int r = adjList[l][j];
+        if(match[r] == -1 || Aug(match[r])){
+            match[r] = 1;
+            return 1;
+        }
+    }
+    return 0;
+}
 void HungarianMCBM::printMatching()
 {
     printf("Emparelhamento por Hungarian Algorithm:\t(Primera camada, segunda camada):");

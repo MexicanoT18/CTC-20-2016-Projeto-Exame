@@ -23,15 +23,15 @@
 1465865421 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\graph.h
 	<vector>
 
-1465865422 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\hungarianmcbm.cpp
+1465870374 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\hungarianmcbm.cpp
 	"HungarianMCBM.h"
 	<stdio.h>
 
-1465865421 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\hungarianmcbm.h
+1465870374 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\hungarianmcbm.h
 	"BipartideGraph.h"
 
-1465866195 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\edmondskarpmaxflow.cpp
-	"EdmondsKarpMaxFLow.h"
+1465866735 source:c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\src\edmondskarpmaxflow.cpp
+	"EdmondsKarpMaxFlow.h"
 
 1465866726 c:\users\dv7\documents\ctc-20\ctc-20-2016-projeto-exame\include\edmondskarpmaxflow.h
 	"Graph.h"
@@ -59,4 +59,65 @@
 	<queue>
 	<stdio.h>
 	<algorithm>
+
+1465867004 source:c:\users\ana cuder\documents\cprojects\ctc20-exame\main.cpp
+	<stdio.h>
+	"Graph.h"
+	"BipartideGraph.h"
+	"FordFulkersonMaxFlow.h"
+	"EdmondsKarpMaxFLow.h"
+	"HungarianMCBM.h"
+	"HopcroftKarpMCBM.h"
+	"DinicMaxFlow.h"
+
+1465867004 c:\users\ana cuder\documents\cprojects\ctc20-exame\include\graph.h
+	<vector>
+
+1465867004 c:\users\ana cuder\documents\cprojects\ctc20-exame\include\bipartidegraph.h
+	"Graph.h"
+
+1465867004 c:\users\ana cuder\documents\cprojects\ctc20-exame\include\fordfulkersonmaxflow.h
+	"Graph.h"
+
+1465867004 c:\users\ana cuder\documents\cprojects\ctc20-exame\include\edmondskarpmaxflow.h
+	"Graph.h"
+	<queue>
+
+1465869029 c:\users\ana cuder\documents\cprojects\ctc20-exame\include\hungarianmcbm.h
+	"BipartideGraph.h"
+
+1465867004 c:\users\ana cuder\documents\cprojects\ctc20-exame\include\hopcroftkarpmcbm.h
+	"BipartideGraph.h"
+
+1465867004 c:\users\ana cuder\documents\cprojects\ctc20-exame\include\dinicmaxflow.h
+	"Graph.h"
+
+1465867004 source:c:\users\ana cuder\documents\cprojects\ctc20-exame\src\bipartidegraph.cpp
+	"BipartideGraph.h"
+	<stdio.h>
+
+1465867004 source:c:\users\ana cuder\documents\cprojects\ctc20-exame\src\dinicmaxflow.cpp
+	"DinicMaxFlow.h"
+	<queue>
+	<stdio.h>
+	<algorithm>
+
+1465867004 source:c:\users\ana cuder\documents\cprojects\ctc20-exame\src\edmondskarpmaxflow.cpp
+	"EdmondsKarpMaxFlow.h"
+
+1465867004 source:c:\users\ana cuder\documents\cprojects\ctc20-exame\src\fordfulkersonmaxflow.cpp
+	"FordFulkersonMaxFlow.h"
+
+1465867004 source:c:\users\ana cuder\documents\cprojects\ctc20-exame\src\graph.cpp
+	"Graph.h"
+	<stdio.h>
+
+1465867004 source:c:\users\ana cuder\documents\cprojects\ctc20-exame\src\hopcroftkarpmcbm.cpp
+	"HopcroftKarpMCBM.h"
+	<queue>
+	<stdio.h>
+
+1465869464 source:c:\users\ana cuder\documents\cprojects\ctc20-exame\src\hungarianmcbm.cpp
+	"HungarianMCBM.h"
+	<stdio.h>
 

@@ -14,6 +14,10 @@ class HungarianMCBM
         virtual ~HungarianMCBM();
     protected:
     private:
+        int Aug(int l);
+        vector<int> match;
+        vector<int> vis;
+        vector< vector< int > > adjList;
         vector<int> firstLayerPair;
         vector<int> secondLayerPair;
 };
