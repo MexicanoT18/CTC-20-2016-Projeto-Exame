@@ -8,7 +8,7 @@ HopcroftKarpMCBM::HopcroftKarpMCBM()
     INF = (1<<30);
 }
 
-int HopcroftKarpMCBM::computeMCBM(BipartideGraph & graph)
+int HopcroftKarpMCBM::computeMCBM(BipartideGraph graph)
 {
     vector< vector< int > > & firstLayer = graph.getFirstLayer();
     firstLayerSize = graph.getFirstLayerSize();

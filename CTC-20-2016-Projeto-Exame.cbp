@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,7 +34,21 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/BipartideGraph.h" />
+		<Unit filename="include/DinicMaxFlow.h" />
+		<Unit filename="include/EdmondsKarpMaxFLow.h" />
+		<Unit filename="include/FordFulkersonMaxFlow.h" />
+		<Unit filename="include/Graph.h" />
+		<Unit filename="include/HopcroftKarpMCBM.h" />
+		<Unit filename="include/HungarianMCBM.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/BipartideGraph.cpp" />
+		<Unit filename="src/DinicMaxFlow.cpp" />
+		<Unit filename="src/EdmondsKarpMaxFLow.cpp" />
+		<Unit filename="src/FordFulkersonMaxFlow.cpp" />
+		<Unit filename="src/Graph.cpp" />
+		<Unit filename="src/HopcroftKarpMCBM.cpp" />
+		<Unit filename="src/HungarianMCBM.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

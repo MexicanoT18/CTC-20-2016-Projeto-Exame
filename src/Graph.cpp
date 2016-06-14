@@ -15,10 +15,11 @@ void Graph::printGraph()
     for(int i=0; i<numNodes; i++){
         printf("\tNode %d:", i);
         for(int j=0; j<(int)adjList[i].size(); j++){
-            printf(" %d", adjList[i][j]);
+            printf(" %d(%d)", adjList[i][j], adjMatrix[i][adjList[i][j]]);
         }
         printf("\n");
     }
+    printf("\tSource: %d Destination: %d\n", source, destination);
 }
 
 bool Graph::readFile(const char* path)

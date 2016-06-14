@@ -6,7 +6,7 @@ HungarianMCBM::HungarianMCBM()
     //ctor
 }
 
-int HungarianMCBM::computeMCBM(BipartideGraph & graph)
+int HungarianMCBM::computeMCBM(BipartideGraph graph)
 {
     return 0;
 }

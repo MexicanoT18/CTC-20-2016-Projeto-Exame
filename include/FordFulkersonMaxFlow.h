@@ -8,7 +8,7 @@ class FordFulkersonMaxFlow
     public:
         FordFulkersonMaxFlow();
         //Recebe um grafo de fluxo e retorna seu fluxo máximo.
-        int computeMaxFlow(Graph & graph);
+        int computeMaxFlow(Graph graph);
         virtual ~FordFulkersonMaxFlow();
     protected:
     private:

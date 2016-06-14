@@ -5,6 +5,7 @@
 #include "EdmondsKarpMaxFLow.h"
 #include "HungarianMCBM.h"
 #include "HopcroftKarpMCBM.h"
+#include "DinicMaxFlow.h"
 
 using namespace std;
 
@@ -16,11 +17,13 @@ int main()
 
     FordFulkersonMaxFlow ffmf;
     EdmondsKarpMaxFLow ekmf;
+    DinicMaxFlow dmf;
     HungarianMCBM hmcbm;
     HopcroftKarpMCBM hkmcbm;
 
     printf("Fluxo Ford Fulkerson: %d\n", ffmf.computeMaxFlow(G));
     printf("Fluxo Edmonds Karp: %d\n", ekmf.computeMaxFlow(G));
+    printf("Fluxo Dinic: %d\n", dmf.computeMaxFlow(G));
 
     BipartideGraph BG;
     BG.readFile("bipartide_graph_3.txt");

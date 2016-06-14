@@ -20,10 +20,12 @@ class Graph
         //Getters.
         vector<int> & getAdjListOfNode(int node) { return adjList[node]; }
         vector<int> & getAdjMatrixOfNode(int node) { return adjMatrix[node]; }
-        vector< vector< int > > & getAdjList() { return adjList; }
-        vector< vector< int > > & getAdjMatrix() { return adjMatrix; }
+        vector< vector<int> > & getAdjList() { return adjList; }
+        vector< vector<int> > & getAdjMatrix() { return adjMatrix; }
         int getSource() { return source; }
         int getDestination() { return destination; }
+        int getNumNodes() { return numNodes; }
+        int getNumEdges() { return numEdges; }
         //Setters.
         void setSource(int s) { source = (s>=0 && s<numNodes ? s:source); }
         void setDestination(int t) { destination = (t>=0 && t<numNodes ? t:destination); }
