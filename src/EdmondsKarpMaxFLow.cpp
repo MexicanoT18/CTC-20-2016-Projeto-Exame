@@ -8,8 +8,8 @@ EdmondsKarpMaxFlow::EdmondsKarpMaxFlow()
 int EdmondsKarpMaxFlow::computeMaxFlow(Graph graph)
 {
 	//Vetores com as arestas e o valor do fluxo residual de cada aresta
-	vector< vector< int > > adjList = graph.getAdjList();
-	vector< vector< int > > residual = graph.getAdjMatrix();
+	vector< vector< int > > & adjList = graph.getAdjList();
+	vector< vector< int > > & residual = graph.getAdjMatrix();
 
 	//Vetor auxiliar que guarda o antecessor de um vértice ao buscar um "augmenting path"
 	vector<int> parent;
@@ -74,8 +74,8 @@ EdmondsKarpMaxFlow::~EdmondsKarpMaxFlow()
 	//dtor
 }
 
-void EdmondsKarpMaxFlow::BFS(int source,int dest, vector< vector< int > > adjList,
-	vector< vector< int > > residual, vector<int> &parent)
+void EdmondsKarpMaxFlow::BFS(int source,int dest, vector< vector< int > > & adjList,
+	vector< vector< int > > & residual, vector<int> & parent)
 {
 	int v,u;
 	queue<int> vertices;
@@ -107,7 +107,7 @@ void EdmondsKarpMaxFlow::BFS(int source,int dest, vector< vector< int > > adjLis
 	}
 }
 
-int EdmondsKarpMaxFlow::augment(int source,int v, int minedge, vector< vector< int > > &residual,vector<int> parent)
+int EdmondsKarpMaxFlow::augment(int source,int v, int minedge, vector< vector< int > > & residual,vector<int> & parent)
 {
 	if (v == source) {
 		return minedge;
