@@ -1,4 +1,4 @@
-#include "EdmondsKarpMaxFLow.h"
+#include "EdmondsKarpMaxFlow.h"
 
 EdmondsKarpMaxFlow::EdmondsKarpMaxFlow()
 {

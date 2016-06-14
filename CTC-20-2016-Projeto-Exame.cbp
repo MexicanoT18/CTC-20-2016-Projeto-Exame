@@ -44,7 +44,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/BipartideGraph.cpp" />
 		<Unit filename="src/DinicMaxFlow.cpp" />
-		<Unit filename="src/EdmondsKarpMaxFLow.cpp" />
+		<Unit filename="src/EdmondsKarpMaxFlow.cpp" />
 		<Unit filename="src/FordFulkersonMaxFlow.cpp" />
 		<Unit filename="src/Graph.cpp" />
 		<Unit filename="src/HopcroftKarpMCBM.cpp" />
