@@ -2,6 +2,7 @@
 #define FORDFULKERSONMAXFLOW_H
 
 #include "Graph.h"
+#include <stack>
 
 class FordFulkersonMaxFlow
 {
@@ -12,6 +13,10 @@ class FordFulkersonMaxFlow
         virtual ~FordFulkersonMaxFlow();
     protected:
     private:
+        int numNodes;
+        int source;
+        int destination;
+        stack<int> dfsStack;
 };
 
 #endif // FORDFULKERSONMAXFLOW_H

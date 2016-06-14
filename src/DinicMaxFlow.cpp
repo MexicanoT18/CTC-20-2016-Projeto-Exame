@@ -59,6 +59,7 @@ bool DinicMaxFlow::BFS()
             }
         }
     }
+    while(!bfsQueue.empty()) bfsQueue.pop();
     return dist[destination] >= 0;
 }
 

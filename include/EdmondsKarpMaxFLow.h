@@ -19,6 +19,7 @@ private:
     vector<int> parent;
 	//Busca um "augmenting path" da fonte até o destino usando BFS
 	void BFS(vector< vector<int> > & adjList);
+	queue<int> bfsQueue;
 
 	//Percorre o "augmenting path" computando o valor do fluxo
 	int augment(int v, int minedge);

@@ -69,17 +69,16 @@ int EdmondsKarpMaxFlow::computeMaxFlow(Graph graph)
 void EdmondsKarpMaxFlow::BFS(vector< vector< int > > & adjList)
 {
 	int v,u;
-	queue<int> vertices;
 
 	//Variável auxiliar que termina o loop após encontrar o destino
 	bool found;
 
-	vertices.push(source);
+	bfsQueue.push(source);
 	found = false;
 
-	while (!vertices.empty() && !found) {
-		v = vertices.front();
-		vertices.pop();
+	while (!bfsQueue.empty() && !found) {
+		v = bfsQueue.front();
+		bfsQueue.pop();
 
 		//Para o vértice atual verifica todos os seus vizinhos que ainda não foram percorridos
 		for (int i = 0; i < (int)adjList[v].size(); i++) {
@@ -92,10 +91,11 @@ void EdmondsKarpMaxFlow::BFS(vector< vector< int > > & adjList)
 					found = true;
 					break;
 				}
-				vertices.push(u);
+				bfsQueue.push(u);
 			}
 		}
 	}
+	while(!bfsQueue.empty()) bfsQueue.pop();
 }
 
 int EdmondsKarpMaxFlow::augment(int v, int minedge)
