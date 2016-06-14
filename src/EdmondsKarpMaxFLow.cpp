@@ -1,11 +1,11 @@
 #include "EdmondsKarpMaxFLow.h"
 
-EdmondsKarpMaxFLow::EdmondsKarpMaxFLow()
+EdmondsKarpMaxFlow::EdmondsKarpMaxFlow()
 {
-	//ctor
+	INF = (1<<30);
 }
 
-int EdmondsKarpMaxFLow::computeMaxFlow(Graph graph)
+int EdmondsKarpMaxFlow::computeMaxFlow(Graph graph)
 {
 	//Vetores com as arestas e o valor do fluxo residual de cada aresta
 	vector< vector< int > > adjList = graph.getAdjList();
@@ -47,7 +47,7 @@ int EdmondsKarpMaxFLow::computeMaxFlow(Graph graph)
 
 	//Loop (Será percorrido no máximo O(VE) vezes)
 	while (true) {
-		
+
 		parent.assign(numnodes, -1);
 		parent[source] = -2;
 
@@ -55,7 +55,7 @@ int EdmondsKarpMaxFLow::computeMaxFlow(Graph graph)
 		BFS(source, destination, adjList, residual, parent);
 
 		//Retorna o fluxo do caminho encontrado ou 0 caso não encontre nenhum
-		currentflow = augment(source, destination, _CRT_INT_MAX, residual,parent);
+		currentflow = augment(source, destination, INF, residual,parent);
 
 		//Todos os caminhos foram encontrados então termina o LOOP
 		if (currentflow == 0) {
@@ -69,17 +69,17 @@ int EdmondsKarpMaxFLow::computeMaxFlow(Graph graph)
 	return flow;
 }
 
-EdmondsKarpMaxFLow::~EdmondsKarpMaxFLow()
+EdmondsKarpMaxFlow::~EdmondsKarpMaxFlow()
 {
 	//dtor
 }
 
-void EdmondsKarpMaxFLow::BFS(int source,int dest, vector< vector< int > > adjList,
+void EdmondsKarpMaxFlow::BFS(int source,int dest, vector< vector< int > > adjList,
 	vector< vector< int > > residual, vector<int> &parent)
 {
 	int v,u;
 	queue<int> vertices;
-	
+
 	//Variável auxiliar que termina o loop após encontrar o destino
 	bool found;
 
@@ -107,7 +107,7 @@ void EdmondsKarpMaxFLow::BFS(int source,int dest, vector< vector< int > > adjLis
 	}
 }
 
-int EdmondsKarpMaxFLow::augment(int source,int v, int minedge, vector< vector< int > > &residual,vector<int> parent)
+int EdmondsKarpMaxFlow::augment(int source,int v, int minedge, vector< vector< int > > &residual,vector<int> parent)
 {
 	if (v == source) {
 		return minedge;

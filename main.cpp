@@ -16,7 +16,7 @@ int main()
     G.printGraph();
 
     FordFulkersonMaxFlow ffmf;
-    EdmondsKarpMaxFLow ekmf;
+    EdmondsKarpMaxFlow ekmf;
     DinicMaxFlow dmf;
     HungarianMCBM hmcbm;
     HopcroftKarpMCBM hkmcbm;
