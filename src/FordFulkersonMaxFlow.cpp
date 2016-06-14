@@ -1,5 +1,4 @@
 #include "FordFulkersonMaxFlow.h"
-#include <iostream>
 
 FordFulkersonMaxFlow::FordFulkersonMaxFlow()
 {

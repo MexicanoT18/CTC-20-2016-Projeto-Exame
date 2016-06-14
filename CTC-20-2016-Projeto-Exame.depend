@@ -124,7 +124,11 @@
 	"HungarianMCBM.h"
 	<stdio.h>
 
+<<<<<<< HEAD
 1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\main.cpp
+=======
+1465877994 source:c:\users\gabriela\documents\netbeansprojects\exame ctc20\main.cpp
+>>>>>>> gabi
 	<stdio.h>
 	"Graph.h"
 	"BipartideGraph.h"
@@ -134,6 +138,7 @@
 	"HopcroftKarpMCBM.h"
 	"DinicMaxFlow.h"
 
+<<<<<<< HEAD
 1465876277 c:\users\caio cesar\documents\netbeansprojects\forsterex\include\graph.h
 	<vector>
 
@@ -162,11 +167,41 @@
 	<stdio.h>
 
 1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\dinicmaxflow.cpp
+=======
+1465877994 c:\users\gabriela\documents\netbeansprojects\exame ctc20\include\graph.h
+	<vector>
+
+1465877994 c:\users\gabriela\documents\netbeansprojects\exame ctc20\include\bipartidegraph.h
+	"Graph.h"
+
+1465877994 c:\users\gabriela\documents\netbeansprojects\exame ctc20\include\fordfulkersonmaxflow.h
+	"Graph.h"
+
+1465877994 c:\users\gabriela\documents\netbeansprojects\exame ctc20\include\edmondskarpmaxflow.h
+	"Graph.h"
+	<queue>
+
+1465877994 c:\users\gabriela\documents\netbeansprojects\exame ctc20\include\hungarianmcbm.h
+	"BipartideGraph.h"
+
+1465877994 c:\users\gabriela\documents\netbeansprojects\exame ctc20\include\hopcroftkarpmcbm.h
+	"BipartideGraph.h"
+
+1465877994 c:\users\gabriela\documents\netbeansprojects\exame ctc20\include\dinicmaxflow.h
+	"Graph.h"
+
+1465877994 source:c:\users\gabriela\documents\netbeansprojects\exame ctc20\src\bipartidegraph.cpp
+	"BipartideGraph.h"
+	<stdio.h>
+
+1465877994 source:c:\users\gabriela\documents\netbeansprojects\exame ctc20\src\dinicmaxflow.cpp
+>>>>>>> gabi
 	"DinicMaxFlow.h"
 	<queue>
 	<stdio.h>
 	<algorithm>
 
+<<<<<<< HEAD
 1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\edmondskarpmaxflow.cpp
 	"EdmondsKarpMaxFlow.h"
 
@@ -179,11 +214,28 @@
 	<stdio.h>
 
 1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\hopcroftkarpmcbm.cpp
+=======
+1465877994 source:c:\users\gabriela\documents\netbeansprojects\exame ctc20\src\edmondskarpmaxflow.cpp
+	"EdmondsKarpMaxFlow.h"
+
+1465877994 source:c:\users\gabriela\documents\netbeansprojects\exame ctc20\src\fordfulkersonmaxflow.cpp
+	"FordFulkersonMaxFlow.h"
+
+1465877994 source:c:\users\gabriela\documents\netbeansprojects\exame ctc20\src\graph.cpp
+	"Graph.h"
+	<stdio.h>
+
+1465877994 source:c:\users\gabriela\documents\netbeansprojects\exame ctc20\src\hopcroftkarpmcbm.cpp
+>>>>>>> gabi
 	"HopcroftKarpMCBM.h"
 	<queue>
 	<stdio.h>
 
+<<<<<<< HEAD
 1465876277 source:c:\users\caio cesar\documents\netbeansprojects\forsterex\src\hungarianmcbm.cpp
+=======
+1465877994 source:c:\users\gabriela\documents\netbeansprojects\exame ctc20\src\hungarianmcbm.cpp
+>>>>>>> gabi
 	"HungarianMCBM.h"
 	<stdio.h>
 
